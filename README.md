@@ -9,8 +9,8 @@ Follow these steps to clone and run the project locally:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-project.git
-   cd your-project
+   git clone https://github.com/vpiselli/todo_app
+   cd todo_app
 
 2. Install PHP dependencies using Composer:
     ```bash
