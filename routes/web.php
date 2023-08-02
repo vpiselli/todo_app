@@ -25,6 +25,11 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/tasks', [App\Http\Controllers\Web\v1\TasksController::class, 'index'])->name('web.tasks.index');
+Route::post('/tasks', [App\Http\Controllers\Web\v1\TasksController::class, 'store'])->name('web.tasks.store');
+Route::put('/tasks/{task}', [App\Http\Controllers\Web\v1\TasksController::class, 'update'])->name('web.tasks.update');
+Route::delete('/tasks/{task}', [App\Http\Controllers\Web\v1\TasksController::class, 'destroy'])->name('web.tasks.delete');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -35,4 +40,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
